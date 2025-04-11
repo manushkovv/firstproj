@@ -4,19 +4,26 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var colorButton: UIButton!
     
+   
+    private var isFirstTap = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func changeColor(_ sender: UIButton) {
-        let randomColor = UIColor(
-            red: CGFloat.random(in: 0...1),
-            green: CGFloat.random(in: 0...1),
-            blue: CGFloat.random(in: 0...1),
-            alpha: 1.0
+        if isFirstTap {
+            sender.backgroundColor = .yellow
+            isFirstTap = false
+        } else {
+            
+            let randomColor = UIColor(
+                red: CGFloat.random(in: 0...1),
+                green: CGFloat.random(in: 0...1),
+                blue: CGFloat.random(in: 0...1),
+                alpha: 1.0
             )
-        sender.backgroundColor = randomColor
+            sender.backgroundColor = randomColor
+        }
     }
-    
 }
-

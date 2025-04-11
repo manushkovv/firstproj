@@ -1,0 +1,5 @@
+# Xcode User Interface State
+xcuserdata/
+
+# macOS System Files
+.DS_Store
